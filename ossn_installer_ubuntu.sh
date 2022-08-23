@@ -27,11 +27,11 @@ sudo apt install unzip -y
 # Install LAMP packages and create UFW Firewall rules
 sudo apt install apache2 -y
 sudo ufw allow in "Apache full"
-sudo apt-get install php8.1 libapache2-mod-php8.1 php8.1-fpm libapache2-mod-fcgid php8.1-curl php8.1-dev php8.1-gd php8.1-mbstring php8.1-zip php8.1-mysql php8.1-xml php8.1-json -y
+sudo apt-get install php libapache2-mod-php php-mysql php-gd php-curl php-zip php-mbstring php-xml php-json -y
 #mcrypt is no more supported in php 7.3 >
 sudo apt-get install openssl
 sudo apt-get install mysql-server -y
-
+sudo mysql -e "ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY '969Development#'"
 # Clear screen and update user
 clear
 echo "Starting MySQL Secure Installation..."
@@ -109,7 +109,7 @@ echo "8. Set proper permissions required to read/write OSSN from browser"
 echo "9. Installed phpmyadmin for ease of use"
 echo "10. Printed this fancy list"
 echo ""
-echo "For issues, please visit https://github.com/themattbook/ossninstaller"
+echo "For issues, please visit https://github.com/KHUNARKARTHEIN/ossninstaller"
 echo ""
 echo "That's it! We're done. Open your browser and navigate"
 echo "to http://yourserver/ and finish setup"
