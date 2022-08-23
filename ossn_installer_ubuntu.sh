@@ -27,7 +27,11 @@ sudo apt install unzip -y
 # Install LAMP packages and create UFW Firewall rules
 sudo apt install apache2 -y
 sudo ufw allow in "Apache full"
-sudo apt-get install php libapache2-mod-php php-mysql php-gd php-curl php-zip php-mbstring php-xml php-json -y
+sudo apt install software-properties-common && sudo add-apt-repository ppa:ondrej/php -y
+sudo apt update
+sudo apt-get install php8.1
+sudo apt-get install libapache2-mod-php8.1 php8.1-fpm libapache2-mod-fcgid php8.1-curl php8.1-dev php8.1-gd php8.1-mbstring php8.1-zip php8.1-mysql php8.1-xml php8.1-json -y
+sudo apt install php8.1-{bcmath,common,curl,fpm,gd,intl,mbstring,mysql,soap,xml,xsl,zip,cli}
 #mcrypt is no more supported in php 7.3 >
 sudo apt-get install openssl
 sudo apt-get install mysql-server -y
